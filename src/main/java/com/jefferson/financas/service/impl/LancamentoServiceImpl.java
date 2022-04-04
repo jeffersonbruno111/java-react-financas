@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class LancamentoServiceImpl implements LancamentoService {
@@ -72,7 +73,7 @@ public class LancamentoServiceImpl implements LancamentoService {
         if(lancamento.getAno() == null || lancamento.getAno().toString().length() !=4){
             throw new RegraNegocioException("Informe um ano válido.");
         }
-        if(lancamento.getUsuario() == null || lancamento.getUsuario().getId() == null){
+        if(lancamento.getIdUsuario() == null || lancamento.getIdUsuario().getId() == null){
             throw new RegraNegocioException("Informe um usuário.");
         }
         if(lancamento.getValor() == null || lancamento.getValor().compareTo(BigDecimal.ZERO) < 1){
@@ -82,5 +83,10 @@ public class LancamentoServiceImpl implements LancamentoService {
             throw new RegraNegocioException("Informe um tipo de lançamento.");
         }
 
+    }
+
+    @Override
+    public Optional<Lancamento> obterPorId(Long id) {
+        return repository.findById(id);
     }
 }

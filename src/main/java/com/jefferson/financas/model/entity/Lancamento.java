@@ -27,7 +27,7 @@ public class Lancamento {
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
-    private Usuario usuario;
+    private Usuario idUsuario;
 
     private BigDecimal valor;
     @Convert(converter = Jsr310JpaConverters.LocalDateConverter.class)
