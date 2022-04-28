@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.jefferson.financas.FinancasApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.902 s - in com.jefferson.financas.FinancasApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.711 s - in com.jefferson.financas.FinancasApplicationTests
