@@ -53,8 +53,6 @@ public class UsuarioServiceTest {
         Assertions.assertThat(usuarioSalvo.getSenha()).isEqualTo("senha");
     }
 
-    /*
-    Rever este teste
     @Test
     public void naoDeveSalvarUmUsuarioComEmailJaCadastrado(){
         //cenario
@@ -63,16 +61,15 @@ public class UsuarioServiceTest {
         Mockito.doThrow(RegraNegocioException.class).when(service).validarEmail(email);
 
         //acao
-        service.salvarUsuario(usuario);
-
-        Throwable exception = Assertions.catchThrowable(() -> Mockito.verify(repository, Mockito.never()).save(usuario));
+        org.junit.jupiter.api.Assertions.assertThrows(RegraNegocioException.class, () -> service.salvarUsuario(usuario));
 
         //verificacao
+        Mockito.verify(repository, Mockito.never()).save(usuario);
         //Assertions.assertThat(exception).isInstanceOf(RegraNegocioException.class).hasMessage("Usuário não encontrado para o email informado.");
-      *//*  assertThrows(
+      /*  assertThrows(
                 RegraNegocioException.class,
-                () -> Mockito.verify(repository, Mockito.never()).save(usuario));*//*
-    }*/
+                () -> Mockito.verify(repository, Mockito.never()).save(usuario));*/
+    }
 
     @Test
     public void deveAutenticarUmUsuarioComSucesso(){
